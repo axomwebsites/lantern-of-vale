@@ -29,8 +29,8 @@ function startgame() {
   document.getElementById('endscreen').classList.add('hidden');
   document.getElementById('hud').style.display = 'block';
   showdialogue([
-    ['Mira', 'Lio, the shadows have crossed the old bridge. Your lantern is the last living flame in Vale.'],
-    ['Lio', 'Five star shards will wake the shrine. I can feel them calling through the trees.'],
+    ['Mira', 'Axom, the shadows have crossed the old bridge. Your lantern is the last living flame in Vale.'],
+    ['Axom', 'Five star shards will wake the shrine. I can feel them calling through the trees.'],
     ['Mira', 'If the dark closes in, cast your lantern light. It will push the shadows back, but guard your glow.']
   ], () => { mode = 'play'; });
 }
