@@ -7,6 +7,7 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#07120f;fon
 #hearts{letter-spacing:2px;font-size:18px;text-shadow:0 0 10px rgba(255,70,98,.85)}
 #shards{font-weight:800;color:#9ef3ff;text-shadow:0 0 10px #28dbff}
 #score{font-weight:800;color:#ffe6a3}
+#pausebtn{font-size:26px;cursor:pointer;padding:0 6px;line-height:1;color:#cfe6d9;user-select:none}
 #objective{margin-top:8px;font-size:13px;line-height:1.25;color:#d9ffe7}
 .bar{height:9px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden;margin-top:9px;border:1px solid rgba(255,255,255,.1)}
 #glowfill{height:100%;width:100%;border-radius:99px;background:linear-gradient(90deg,#50ffd4,#fdf398,#ffbd68);box-shadow:0 0 18px rgba(255,237,129,.75)}
@@ -29,5 +30,11 @@ button:active{transform:translateY(2px);box-shadow:0 5px 18px rgba(96,255,203,.1
 #action.cool{filter:grayscale(.85);opacity:.56}
 .hidden{display:none!important}
 .kbd{display:inline-block;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);border-radius:7px;padding:2px 7px;color:#fff;margin:0 2px}
+#levellist{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:20px 0}
+.levelbtn{padding:12px 28px;font-size:18px;min-width:100px;background:rgba(255,255,255,.08);color:#fff;border:2px solid rgba(255,255,255,.15);border-radius:99px;cursor:pointer;transition:.2s}
+.levelbtn:hover{background:rgba(255,255,255,.18)}
+.levelbtn.locked{opacity:.4;cursor:not-allowed;filter:grayscale(.8)}
+.levelbtn.unlocked{background:linear-gradient(180deg,#fff7b9,#66ffd0);color:#08221b;border-color:transparent}
+#volslider{width:200px;accent-color:#66ffd0}
 @media (min-width:900px){#stick,#action{opacity:.35}#stick:hover,#action:hover{opacity:1}}
-@media (max-width:520px){#hud{top:8px;left:8px;padding:10px;min-width:calc(100vw - 16px);border-radius:16px}#objective{font-size:12px}#dialogue{bottom:8px;padding:14px;border-radius:18px}#dialoguetext{font-size:15px}#stick{width:104px;height:104px;left:16px;bottom:18px}#knob{width:46px;height:46px;left:29px;top:29px}#action{width:78px;height:78px;right:17px;bottom:27px;font-size:13px}.card{padding:25px 18px}}
+@media (max-width:520px){#hud{top:8px;left:8px;padding:10px;min-width:calc(100vw - 16px);border-radius:16px}#objective{font-size:12px}#dialogue{bottom:8px;padding:14px;border-radius:18px}#dialoguetext{font-size:15px}#stick{width:104px;height:104px;left:16px;bottom:18px}#knob{width:46px;height:46px;left:29px;top:29px}#action{width:78px;height:78px;right:17px;bottom:27px;font-size:13px}.card{padding:25px 18px}#pausebtn{font-size:22px}}
