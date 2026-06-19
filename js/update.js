@@ -116,4 +116,4 @@ export function update(dt, endgame) {
       }
     }
   });
-      }
+}
