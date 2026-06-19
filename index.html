@@ -8,31 +8,63 @@
 </head>
 <body>
 <canvas id="gamecanvas"></canvas>
+
 <div id="hud" class="panel">
-  <div id="hudtop"><div id="hearts"></div><div id="shards"></div><div id="score"></div></div>
+  <div id="hudtop">
+    <div id="hearts"></div>
+    <div id="shards"></div>
+    <div id="score"></div>
+    <div id="pausebtn">☰</div>
+  </div>
   <div class="bar"><div id="glowfill"></div></div>
   <div id="objective"></div>
 </div>
-<div id="startscreen" class="overlay">
+
+<div id="mainmenu" class="overlay">
   <div class="card">
     <h1>Lantern of Vale</h1>
-    <p>The moon has fallen behind the Blackwood canopy. You are Axom, the last courier of the valley, carrying a living lantern that can wake the ancient shrine.</p>
-    <p>Gather star shards, avoid the hungry shadows, and bring light back to Vale before your flame goes out.</p>
-    <button id="startbtn">Begin the Story</button>
-    <div class="small">Move with <span class="kbd">WASD</span> or <span class="kbd">Arrow Keys</span>. Cast light with <span class="kbd">Space</span>. Touch controls work on mobile.</div>
+    <div id="levellist"></div>
+    <div class="small">Move with <span class="kbd">WASD</span> or <span class="kbd">Arrow Keys</span>. Cast light with <span class="kbd">Space</span>.</div>
   </div>
 </div>
-<div id="endscreen" class="overlay hidden">
-  <div class="card"><h2 id="endtitle"></h2><p id="endtext"></p><button id="restartbtn">Play Again</button></div>
+
+<div id="pausemenu" class="overlay hidden">
+  <div class="card">
+    <h2>Paused</h2>
+    <button id="resumebtn">Resume</button>
+    <button id="settingsfrompause">Settings</button>
+    <button id="mainmenufrompause">Main Menu</button>
+  </div>
 </div>
+
+<div id="settingsmenu" class="overlay hidden">
+  <div class="card">
+    <h2>Settings</h2>
+    <p>Volume: <input type="range" id="volslider" min="0" max="100" value="42"></p>
+    <button id="resetprogressbtn">Reset Progress</button>
+    <button id="closesettings">Close</button>
+  </div>
+</div>
+
+<div id="endscreen" class="overlay hidden">
+  <div class="card">
+    <h2 id="endtitle"></h2>
+    <p id="endtext"></p>
+    <button id="restartbtn">Retry</button>
+    <button id="mainmenufromend">Main Menu</button>
+  </div>
+</div>
+
 <div id="dialogue" class="panel hidden">
   <div id="speaker"></div><div id="dialoguetext"></div>
   <button id="nextline">Continue</button>
 </div>
+
 <div id="controls">
   <div id="stick"><div id="knob"></div></div>
   <div id="action">LIGHT</div>
 </div>
+
 <script type="module" src="js/game.js"></script>
 </body>
-  </html>
+</html>
