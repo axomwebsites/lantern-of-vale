@@ -1,2 +1,2 @@
 export const totallevels = 2;
-export const gamename = 'Lantern of Vale';
+export const playername = 'Axom';
