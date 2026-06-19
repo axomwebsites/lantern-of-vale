@@ -14,6 +14,8 @@ let camera = { x: 0, y: 0 };
 let currentlevel = 1;
 let paused = false;
 
+const levels = totallevels || 2;
+
 function resize() {
   dpr = Math.min(devicePixelRatio || 1, 2);
   w = innerWidth; h = innerHeight;
@@ -38,7 +40,7 @@ function renderlevellist() {
   const container = document.getElementById('levellist');
   container.innerHTML = '';
   const prog = getprogress();
-  for (let i = 1; i <= totallevels; i++) {
+  for (let i = 1; i <= levels; i++) {
     const btn = document.createElement('button');
     btn.textContent = 'Level ' + i;
     btn.className = 'levelbtn';
@@ -82,7 +84,7 @@ function endgame(win) {
     document.getElementById('endtitle').textContent = 'Vale Wakes';
     document.getElementById('endtext').textContent = 'The shrine drinks your lantern light and dawn spills through the Blackwood. Final score: ' + player.score + '  Time bonus: ' + bonus + '.';
     const prog = getprogress();
-    if (currentlevel >= prog.unlocked && currentlevel < totallevels) {
+    if (currentlevel >= prog.unlocked && currentlevel < levels) {
       prog.unlocked = currentlevel + 1;
       saveprogress(prog);
     }
