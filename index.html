@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Lantern of Vale</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="gamecanvas"></canvas>
+<div id="hud" class="panel">
+  <div id="hudtop"><div id="hearts"></div><div id="shards"></div><div id="score"></div></div>
+  <div class="bar"><div id="glowfill"></div></div>
+  <div id="objective"></div>
+</div>
+<div id="startscreen" class="overlay">
+  <div class="card">
+    <h1>Lantern of Vale</h1>
+    <p>The moon has fallen behind the Blackwood canopy. You are Axom, the last courier of the valley, carrying a living lantern that can wake the ancient shrine.</p>
+    <p>Gather star shards, avoid the hungry shadows, and bring light back to Vale before your flame goes out.</p>
+    <button id="startbtn">Begin the Story</button>
+    <div class="small">Move with <span class="kbd">WASD</span> or <span class="kbd">Arrow Keys</span>. Cast light with <span class="kbd">Space</span>. Touch controls work on mobile.</div>
+  </div>
+</div>
+<div id="endscreen" class="overlay hidden">
+  <div class="card"><h2 id="endtitle"></h2><p id="endtext"></p><button id="restartbtn">Play Again</button></div>
+</div>
+<div id="dialogue" class="panel hidden">
+  <div id="speaker"></div><div id="dialoguetext"></div>
+  <button id="nextline">Continue</button>
+</div>
+<div id="controls">
+  <div id="stick"><div id="knob"></div></div>
+  <div id="action">LIGHT</div>
+</div>
+<script type="module" src="js/game.js"></script>
+</body>
+  </html>
