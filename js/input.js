@@ -10,6 +10,10 @@ export function init() {
       const next = document.getElementById('nextline');
       if (!next.classList.contains('hidden')) next.click();
     }
+    if (e.key === 'Escape') {
+      const pausebtn = document.getElementById('pausebtn');
+      if (!pausebtn.classList.contains('hidden')) pausebtn.click();
+    }
   });
   document.addEventListener('keyup', e => keys.delete(e.key.toLowerCase()));
 
