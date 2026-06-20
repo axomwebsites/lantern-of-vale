@@ -14,8 +14,6 @@ let camera = { x: 0, y: 0 };
 let currentlevel = 1;
 let paused = false;
 
-const levels = totallevels || 2;
-
 function resize() {
   dpr = Math.min(devicePixelRatio || 1, 2);
   w = innerWidth; h = innerHeight;
@@ -38,8 +36,13 @@ function saveprogress(progress) {
 
 function renderlevellist() {
   const container = document.getElementById('levellist');
+  if (!container) {
+    console.error('levellist container not found');
+    return;
+  }
   container.innerHTML = '';
   const prog = getprogress();
+  const levels = totallevels || 2;
   for (let i = 1; i <= levels; i++) {
     const btn = document.createElement('button');
     btn.textContent = 'Level ' + i;
@@ -84,7 +87,7 @@ function endgame(win) {
     document.getElementById('endtitle').textContent = 'Vale Wakes';
     document.getElementById('endtext').textContent = 'The shrine drinks your lantern light and dawn spills through the Blackwood. Final score: ' + player.score + '  Time bonus: ' + bonus + '.';
     const prog = getprogress();
-    if (currentlevel >= prog.unlocked && currentlevel < levels) {
+    if (currentlevel >= prog.unlocked && currentlevel < totallevels) {
       prog.unlocked = currentlevel + 1;
       saveprogress(prog);
     }
@@ -155,6 +158,7 @@ export function init() {
   volslider.addEventListener('input', () => {
     if (audio && audio.master) audio.master.gain.value = volslider.value / 100 * 0.42;
   });
+
   document.getElementById('mainmenu').classList.remove('hidden');
   renderlevellist();
   loop(0);
